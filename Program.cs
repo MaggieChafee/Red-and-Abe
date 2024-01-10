@@ -32,42 +32,48 @@ List<Product> products = new List<Product>()
         Name = "Invisibility Cloak",
         Price = 5000.00M,
         Available = true,
-        TypeId = 3
+        TypeId = 3,
+        DateStocked = new DateTime(2023, 11, 20)
     },
     new Product()
     {
         Name = "Witch's Hat",
         Price = 20.00M,
         Available = true,
-        TypeId = 1
+        TypeId = 1,
+        DateStocked = new DateTime(2023, 12, 20)
     },
     new Product()
     {
         Name = "Blackthorn Wand",
         Price = 75.00M,
         Available = false,
-        TypeId = 4
+        TypeId = 4,
+        DateStocked = new DateTime(2023, 10, 12)
     },
     new Product()
     {
         Name = "Remembrall",
         Price = 45.00M,
         Available = false,
-        TypeId = 3
+        TypeId = 3,
+        DateStocked = new DateTime(2023, 1, 19)
     },
     new Product()
     {
         Name = "Felix Felicis",
         Price = 150.00M,
         Available = true,
-        TypeId = 2
+        TypeId = 2,
+        DateStocked = new DateTime(2022, 11, 20)
     },
     new Product()
     {
         Name = "Polyjuice Potion",
         Price = 55.00M,
         Available = false,
-        TypeId = 2
+        TypeId = 2,
+        DateStocked = new DateTime(2023, 7, 1)
     }
 };
 
@@ -82,7 +88,8 @@ void ViewProducts()
         Console.WriteLine(@$"   -- {i + 1} {products[i].Name} --
         Cost: {products[i].Price} USD 
         TypeId: {products[i].TypeId}
-        Availablity: {(products[i].Available ? "Unavailable" : "Available")}");
+        Availablity: {(products[i].Available ? "Unavailable" : "Available")}
+        Days on Shelf: {products[i].DaysOnShelf}");
     }
 }
 
@@ -107,7 +114,7 @@ void ViewProductTypeId()
         Console.WriteLine($"{productType.Id}. {productType.CatName}");
     }
 }
-// READ - ViewAvailableProducts()
+
 // AddProduct()
 void AddProduct()
 {
@@ -230,7 +237,7 @@ void UpdateProduct()
                         3. Availablity: {chosen.Available}
                         4. Type Id: {chosen.TypeId}");
 
-    string answer = "";
+    string answer = Console.ReadLine();
     decimal priceAnswer = 0M;
     bool availAnswer = true;
     int idAnswer = 0;
@@ -264,23 +271,33 @@ void UpdateProduct()
 }
 
 // SearchProductType()
+ 
 
-void SearchProductType()
+void SearchForProduct()
 {
     Console.WriteLine("Enter the TypeId you would like to see:");
     ViewProductTypeId();
 
     int response = int.Parse(Console.ReadLine());
 
-    List<Product> filteredProducts = products.FindAll(x => x.Id == response);
-
-    foreach (Product product in filteredProducts)
+    List<Product> matchingProducts = products.Where(p => p.TypeId == response).ToList();
+    Console.WriteLine("Here are the requested products:");
+    foreach (Product product in matchingProducts)
     {
         Console.WriteLine($"{product.Name}");
     }
 }
 
-// APP
+// View Available Products
+void ViewAvailableProducts()
+{
+    List<Product> unsoldProducts = products.Where(p => !p.Available).ToList();
+    foreach (Product product in unsoldProducts)
+    {
+        Console.WriteLine($"{product.Name}");
+    }
+}
+
 
 // Greeting and Menu
 
@@ -297,7 +314,7 @@ while (choice != "0")
             2. Add a Product
             3. Delete a Product
             4. Edit a Product
-            5. Search for a Product
+            5. Search for a Product by Type
             6. View all Available Products");
 
         choice = Console.ReadLine();
@@ -323,11 +340,10 @@ while (choice != "0")
         }
         else if (choice == "5")
         {
-            SearchProductType();
+            SearchForProduct();
         }
         else if (choice == "6")
         {
-            Console.WriteLine("View Available Products");
-            // ViewAvailableProducts();
+            ViewAvailableProducts();
         }
     }
