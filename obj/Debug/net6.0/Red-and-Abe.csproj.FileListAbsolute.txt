@@ -1,0 +1,14 @@
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.AssemblyInfoInputs.cache
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.AssemblyInfo.cs
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.csproj.CoreCompileInputs.cache
+C:\Users\maggi\workspace\c#\Red-and-Abe\bin\Debug\net6.0\Red-and-Abe.exe
+C:\Users\maggi\workspace\c#\Red-and-Abe\bin\Debug\net6.0\Red-and-Abe.deps.json
+C:\Users\maggi\workspace\c#\Red-and-Abe\bin\Debug\net6.0\Red-and-Abe.runtimeconfig.json
+C:\Users\maggi\workspace\c#\Red-and-Abe\bin\Debug\net6.0\Red-and-Abe.dll
+C:\Users\maggi\workspace\c#\Red-and-Abe\bin\Debug\net6.0\Red-and-Abe.pdb
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.dll
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\refint\Red-and-Abe.dll
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.pdb
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\Red-and-Abe.genruntimeconfig.cache
+C:\Users\maggi\workspace\c#\Red-and-Abe\obj\Debug\net6.0\ref\Red-and-Abe.dll
